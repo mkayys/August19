@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
             params[:user][:password]
         )
         if @user
+            
         else
             render json: ['yo, wrong info'], status: 401
         end
