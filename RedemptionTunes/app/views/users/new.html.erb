@@ -1,0 +1,22 @@
+<div class="new-user">
+    <div class="new-user-title">Create an account</div>
+
+    <form class="new-user-form" action="<%= users_url %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="user-inputs">
+            <label>Email:
+                <input id="email" type="text" name="user[email]" value="" placeholder="Email">
+            </label>
+            <br/>
+            <br/>
+            <label>Password:
+                <input id="password" type="password" name="user[password]" value="" placeholder="Password">
+            </label>
+            <br/>
+            <br/>
+            <input class="new-user-btn" type="submit" value="Sign Up!">
+        </div>
+    </form>
+
+    <br/>
+</div>

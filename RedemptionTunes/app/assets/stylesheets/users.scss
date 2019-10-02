@@ -1,3 +1,50 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-user {
+    border: 1px solid #ebebeb;
+    box-shadow: 1px 1px 1px 1px #ebebeb;
+    text-align: center;
+    background-color: lavender;
+    font-family: 'Mansalva', cursive;
+    margin: 0 auto;
+
+    .new-user-title {
+        font-size: 70px;
+        padding: 20px;
+        // text-align: center;
+    }
+
+    .new-user-form {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .user-inputs {
+        // text-align: left;
+        // width: 500px;
+    }
+    
+    #email {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    #password {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .new-user-btn {
+        border: 2px solid transparent;
+        border-radius: 5px;
+    }
+    .new-user-btn:hover {
+        border: 2px solid #7FFF00;
+        cursor: pointer;
+    }
+}

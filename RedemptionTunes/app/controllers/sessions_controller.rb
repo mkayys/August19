@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
             params[:user][:password]
         )
         if @user
-            
+            login(@user)
+            redirect_to user_url(@user.id)
         else
             render json: ['yo, wrong info'], status: 401
         end
