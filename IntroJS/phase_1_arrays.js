@@ -22,3 +22,7 @@ Array.prototype.twoSum = function() {
     }
     return pairs;
 }
+
+Array.prototype.transpose = function() {
+    
+}
