@@ -98,7 +98,26 @@ Board.prototype.isValidPos = function (pos) {
  *
  * Returns null if no pieces of the opposite color are found.
  */
-function _positionsToFlip (board, pos, color, dir, piecesToFlip) {
+function _positionsToFlip (board, pos, color, dir, piecesToFlip = []) {
+  let nextPos = [pos[0] + dir[0], pos[1] + dir[1]];
+  
+  if(!board.isValidPos(nextPos)) {
+    return null;
+  } else if (!board.isOccupied(nextPos)) {
+    return null;
+  } else if(board.isMine(nextPos, color)) {
+    if (board.getPiece(pos) !== undefined) {
+      piecesToFlip.push(board.getPiece(pos)); 
+    }
+    if (piecesToFlip.length === 0) {
+      return null;
+    } else {
+      return piecesToFlip;
+    }
+  } else {
+    return _positionsToFlip(board, nextPos, color, dir, piecesToFlip)
+  }
+  
 }
 
 /**
@@ -114,6 +133,7 @@ Board.prototype.placePiece = function (pos, color) {
  * Prints a string representation of the Board to the console.
  */
 Board.prototype.print = function () {
+
 };
 
 /**
