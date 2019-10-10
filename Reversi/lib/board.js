@@ -5,12 +5,14 @@ let Piece = require("./piece");
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
-  const grid = [];
+  // const grid = [];
 
-  for(let i = 0; i < 8; i++) {
-    let row = new Array(8);
-    grid.push(row);
-  }
+  // for(let i = 0; i < 8; i++) {
+  //   let row = new Array(8);
+  //   grid.push(row);
+  // }
+
+  const grid = Array.from(Array(8), () => new Array(8));
 
   grid[3][3] = new Piece("white");
   grid[3][4] = new Piece("black");
