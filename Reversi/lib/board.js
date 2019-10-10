@@ -101,23 +101,36 @@ Board.prototype.isValidPos = function (pos) {
 function _positionsToFlip (board, pos, color, dir, piecesToFlip = []) {
   let nextPos = [pos[0] + dir[0], pos[1] + dir[1]];
   
-  if(!board.isValidPos(nextPos)) {
-    return null;
-  } else if (!board.isOccupied(nextPos)) {
-    return null;
-  } else if(board.isMine(nextPos, color)) {
-    if (board.getPiece(pos) !== undefined) {
-      piecesToFlip.push(board.getPiece(pos)); 
-    }
+  // if(!board.isValidPos(nextPos)) {
+  //   return null;
+  // } else if (!board.isOccupied(nextPos)) {
+  //   return null;
+  // } else if(board.isMine(nextPos, color)) {
+  //   if (board.getPiece(pos) !== undefined) {
+  //     piecesToFlip.push(board.getPiece(pos)); 
+  //   }
+  //   if (piecesToFlip.length === 0) {
+  //     return null;
+  //   } else {
+  //     return piecesToFlip;
+  //   }
+  // } else {
+  //   return _positionsToFlip(board, nextPos, color, dir, piecesToFlip)
+  // }
+  
+  if (!board.isValidPos(nextPos)) return null;
+  if (!board.isOccupied(nextPos)) return null;
+
+  if (board.isMine(nextPos, color)) {
+    if(board.getPiece(pos) !== undefined) piecesToFlip.push(board.getPiece(pos));
     if (piecesToFlip.length === 0) {
       return null;
     } else {
       return piecesToFlip;
     }
-  } else {
-    return _positionsToFlip(board, nextPos, color, dir, piecesToFlip)
   }
-  
+
+  return _positionsToFlip(board, nextPos, color, dir, piecesToFlip);
 }
 
 /**
@@ -142,6 +155,12 @@ Board.prototype.print = function () {
  * color being flipped.
  */
 Board.prototype.validMove = function (pos, color) {
+  if(this.isOccupied(pos)) return false;
+
+  for(let i = 0; i < Board.DIRS.length; i++) {
+    if (_positionsToFlip(this, pos, color, Board.DIRS[i])) return true;
+  }
+  return false;
 };
 
 /**
