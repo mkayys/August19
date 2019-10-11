@@ -140,13 +140,28 @@ function _positionsToFlip (board, pos, color, dir, piecesToFlip = []) {
  * Throws an error if the position represents an invalid move.
  */
 Board.prototype.placePiece = function (pos, color) {
+  if (!this.validMove(pos, color)) throw new Error('invalid move');
+
+  let piecesArr = [];
+
+  for (let dirIdx = 0; dirIdx < Board.DIRS.length; dirIdx++) {
+      piecesArr = piecesArr.concat(
+        _positionsToFlip(this, pos, color, Board.DIRS[dirIdx]) || []
+      )
+  }
+  for (let i = 0; i < piecesArr.length; i++) {
+    piecesArr[i].flip();
+  }
+  this.grid[pos[0]][pos[1]] = new Piece(color);
 };
 
 /**
  * Prints a string representation of the Board to the console.
  */
 Board.prototype.print = function () {
+  for(let i = 0; i < this.length; i++) {
 
+  }
 };
 
 /**
