@@ -70,7 +70,7 @@ notMarkovSays("meow", "me");
 // true
 
 Function.prototype.myBind = function(ctx) {
-    let bindArgs = Array.from(arguments);
+    let bindArgs = Array.from(arguments).slice(1);
     const that = this;
     return function _myBind() {
         let callArgs = Array.from(arguments);
@@ -83,5 +83,19 @@ Function.prototype.myBind2 = function(ctx, ...bindArgs) {
     const that = this;
     return function _myBind2(...callArgs) {
         return that.apply(ctx, bindArgs.concat(callArgs));
+    }
+}
+
+
+function curriedSum(numArgs) {
+    let nums = [];
+    return function _curriedSum(num) {
+        nums.push(num);
+        if (nums.length === numArgs) {
+            let total = nums.reduce((a,b) => a + b, 0);
+            return total;
+        } else {
+            return _curriedSum;
+        }
     }
 }
