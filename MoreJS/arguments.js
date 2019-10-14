@@ -99,3 +99,23 @@ function curriedSum(numArgs) {
         }
     }
 }
+
+
+
+
+// curry
+// Function.prototype.curry = function(numArgs) {
+//     const stuff = [];
+//     const that = this;
+
+//     function _innerCurry(arg) {
+//         stuff.push(arg);
+//         if (stuff.length >= numArgs) {
+//             return that.call(that, ...stuff)
+//             or that.apply(that, stuff);
+//         }
+//         return _innerCurry;
+//     }
+//     return _innerCurry;
+// }
+
