@@ -62,11 +62,22 @@ Game.prototype.checkCollisions = function() {
                 const obj2 = this.asteroids[j];
 
                 if(obj1.isCollidedWith(obj2)) {
-                    alert('COLLISION');
+                    // alert('COLLISION');
+                    obj1.collideWith(obj2);
                 }
             }
         }
     }
+};
+
+Game.prototype.step = function() {
+    this.moveObjects();
+    this.checkCollisions();
+};
+
+Game.prototype.remove = function(asteroid) {
+    let asteroidIdx = this.asteroids.indexOf(asteroid);
+    this.asteroids.splice(asteroidIdx, 1);
 };
 
 module.exports = Game;

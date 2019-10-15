@@ -8,9 +8,10 @@ function GameView(game, ctx) {
 GameView.prototype.start = function(){
     let that = this;
     setInterval(function(){
-        that.game.moveObjects();
+        that.game.step();
         that.game.draw(that.ctx);
-        that.game.checkCollisions();
+        // testing:
+        // that.game.checkCollisions(); 
     }, 20);
 };
 
