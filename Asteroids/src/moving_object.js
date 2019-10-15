@@ -24,4 +24,13 @@ MovingObject.prototype.move = function(){
     this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
 }
 
+MovingObject.prototype.isCollidedWith = function(otherObject) {
+    let pos1 = this.pos;
+    let pos2 = otherObject.pos;
+    let centerDist = Math.sqrt(
+        Math.pow(pos1[0] - pos2[0], 2) + Math.pow(pos1[1] - pos2[1], 2)
+    );
+    return centerDist < (this.radius + otherObject.radius);
+}
+
 module.exports = MovingObject;
