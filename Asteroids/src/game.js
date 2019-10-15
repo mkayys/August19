@@ -7,6 +7,7 @@ Game.NUM_ASTEROIDS = 10;
 function Game() {
     this.asteroids = [];
     this.addAsteroids();
+    this.ship = new Ship({ pos: this.randomPosition(), game: this});
 };
 
 Game.prototype.addAsteroids = function() {
