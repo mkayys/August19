@@ -2,7 +2,7 @@ const Asteroid = require('./asteroid');
 
 Game.DIM_X = 900;
 Game.DIM_Y = 700;
-Game.NUM_ASTEROIDS = 25;
+Game.NUM_ASTEROIDS = 10;
 
 function Game() {
     this.asteroids = [];
@@ -51,6 +51,22 @@ Game.prototype.wrap = function(pos) {
     }
 
     return pos;
-}
+};
+
+Game.prototype.checkCollisions = function() {
+    // debugger
+    for(let i = 0; i < this.asteroids.length; i++) {
+        for(let j = 0; j < this.asteroids.length; j++) {
+            if(i !== j) {
+                const obj1 = this.asteroids[i];
+                const obj2 = this.asteroids[j];
+
+                if(obj1.isCollidedWith(obj2)) {
+                    alert('COLLISION');
+                }
+            }
+        }
+    }
+};
 
 module.exports = Game;

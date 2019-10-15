@@ -10,6 +10,7 @@ GameView.prototype.start = function(){
     setInterval(function(){
         that.game.moveObjects();
         that.game.draw(that.ctx);
+        that.game.checkCollisions();
     }, 20);
 };
 
