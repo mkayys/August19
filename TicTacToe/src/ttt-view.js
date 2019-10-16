@@ -7,10 +7,15 @@ class View {
   }
 
   bindEvents() {
-    
+    this.$el.on('click', 'li', (e) => {
+
+    })
   }
 
-  makeMove($square) {}
+  makeMove($square) {
+      let pos = $square.data('pos');
+      let currentPlayer = this.game.currentPlayer;
+  }
 
   setupBoard() {
     let $ul = $('<ul>');
