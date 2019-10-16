@@ -1,4 +1,6 @@
 const Asteroid = require('./asteroid');
+const Ship = require('./ship');
+
 
 Game.DIM_X = 900;
 Game.DIM_Y = 700;
@@ -40,10 +42,14 @@ Game.prototype.moveObjects = function() {
     // for (let i = 0; i < this.asteroids.length; i++) {
     //     this.asteroids[i].move();
     // };
-    let allObjects = this.allObjects();
-    for (let i = 0; i < allObjects.length; i++) {
-        allObjects[i].move();
-    };
+
+    // let allObjects = this.allObjects();
+    // for (let i = 0; i < allObjects.length; i++) {
+    //     // debugger;
+    //     allObjects[i].move();
+    // };
+
+    this.allObjects().forEach(object => object.move());
 }
 
 Game.prototype.wrap = function(pos) {
@@ -91,7 +97,7 @@ Game.prototype.remove = function(asteroid) {
 };
 
 Game.prototype.allObjects = function() {
-    return this.asteroids.concat(this.ship);
+    return this.asteroids.concat([this.ship]);
 };
 
 module.exports = Game;

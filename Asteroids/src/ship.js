@@ -9,6 +9,8 @@ function Ship(options){
     options.color = Ship.COLOR;
     options.radius = Ship.RADIUS;
     options.vel = [0,0];
+    options.pos = options.pos;
+    options.game = options.game;
 
     MovingObject.call(this, options)
 };

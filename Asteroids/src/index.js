@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let game = new Game();
     let gameView = new GameView(game, ctx);
-    gameView.start();
-    
+    // gameView.start();
+
+    // window.Game = Game;
+
     window.MovingObject = MovingObject;
     window.move = MovingObject.move;
     window.draw = MovingObject.draw;
