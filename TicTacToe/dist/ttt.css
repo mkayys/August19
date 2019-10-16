@@ -6,16 +6,21 @@
 
 ul {
     display: flex;
-    width: 900px;
-    height: 900px;
+    width: 600px;
+    height: 600px;
     flex-wrap: wrap;
     list-style: none;
 }
 
 li {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border: 1px solid black;
     background: gray;
     box-sizing: border-box;
+}
+
+li:hover {
+    background: yellow;
+    cursor: pointer;
 }
