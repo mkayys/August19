@@ -9,8 +9,13 @@ function Ship(options){
     options.color = Ship.COLOR;
     options.radius = Ship.RADIUS;
     options.vel = [0,0];
-    
+
     MovingObject.call(this, options)
+};
+
+Ship.prototype.relocate = function() {
+    this.pos = this.game.randomPosition();
+    this.vel = [0, 0];
 };
 
 module.exports = Ship;

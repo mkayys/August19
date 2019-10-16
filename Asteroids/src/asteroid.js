@@ -16,6 +16,12 @@ function Asteroid(options){
     options.color = DEFAULTS.COLOR;
 
     MovingObject.call(this, options);
+};
+
+Asteroid.prototype.collideWith = function(otherObject) {
+    if(otherObject instanceof Ship) {
+        otherObject.relocate();
+    }
 }
 
 Util.inherits(Asteroid, MovingObject);
