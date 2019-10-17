@@ -108,7 +108,7 @@ class FollowToggle {
         e.preventDefault();
         
         if (this.followState === "unfollowed") {
-            return $.ajax({
+            $.ajax({
                 url: `/users/${this.userId}/follow`,
                 method: 'POST',
                 dataType: 'json'
@@ -117,7 +117,7 @@ class FollowToggle {
                 this.render();
             });
         } else if (this.followState === "followed") {
-            return $.ajax({
+            $.ajax({
                 url: `/users/${this.userId}/follow`,
                 method: 'delete',
                 dataType: 'json'
