@@ -102,6 +102,30 @@ class FollowToggle {
         this.render();
     }
 
+    handleClick(e) {
+        e.preventDefault();
+        
+        if (this.followState === "unfollowed") {
+            $.ajax({
+                url: `/users/${this.userId}/follow`,
+                method: 'POST',
+                dataType: 'json'
+            }).then(() => {
+                this.followState = 'followed';
+                this.render();
+            });
+        } else if (this.followState === "followed") {
+            $.ajax({
+                url: `/users/${this.userId}/follow`,
+                method: 'delete',
+                dataType: 'json'
+            }).then(() => {
+                this.followState = 'unfollowed';
+                this.render();
+            });
+        }
+    }
+
     render() {
         if(this.followState === 'unfollowed') {
             this.$el.html('Follow!');
