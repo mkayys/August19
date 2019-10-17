@@ -13,7 +13,8 @@ const APIUtil = {
             method: 'delete',
             dataType: 'json'
         });
-    }
+    },
+    
 };
 
 module.exports = APIUtil;

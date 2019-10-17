@@ -108,7 +108,8 @@ const APIUtil = {
             method: 'delete',
             dataType: 'json'
         });
-    }
+    },
+    
 };
 
 module.exports = APIUtil;
@@ -194,13 +195,39 @@ module.exports = FollowToggle;
 /***/ (function(module, exports, __webpack_require__) {
 
 const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
+const UsersSearch = __webpack_require__(/*! ./users_search */ "./frontend/users_search.js");
 
 $(()=> {
     const $toggleBtn = $('.follow-toggle');
     $toggleBtn.each((idx, btn) => {
         new FollowToggle(btn);
     });
+
+    const $searchNav = $('.users-search');
+    $searchNav.each((idx, nav) => {
+        new UsersSearch(nav);
+    });
 })
+
+/***/ }),
+
+/***/ "./frontend/users_search.js":
+/*!**********************************!*\
+  !*** ./frontend/users_search.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class UsersSearch {
+    constructor(el) {
+        this.$el = $(el);
+        this.input = this.$el.find('.search');
+        this.ul = this.$el.find('.users');
+    }
+
+};
+
+module.exports = UsersSearch;
 
 /***/ })
 
