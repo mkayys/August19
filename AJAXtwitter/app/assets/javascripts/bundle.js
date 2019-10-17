@@ -109,7 +109,15 @@ const APIUtil = {
             dataType: 'json'
         });
     },
-    
+
+    searchUsers: queryVal => {
+        return $.ajax({
+            url: '/users/search',
+            method: 'get',
+            dataType: 'json',
+            data: { query: queryVal }
+        });
+    }
 };
 
 module.exports = APIUtil;
@@ -216,13 +224,22 @@ $(()=> {
   !*** ./frontend/users_search.js ***!
   \**********************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+const ApiUtil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
 
 class UsersSearch {
     constructor(el) {
         this.$el = $(el);
-        this.input = this.$el.find('.search');
+        this.input = this.$el.find('input[name=username]');
         this.ul = this.$el.find('.users');
+    }
+
+    handleInput(e) {
+        e.preventDefault();
+
+        
+
     }
 
 };
