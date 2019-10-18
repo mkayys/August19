@@ -16,6 +16,7 @@ const APIUtil = {
     },
 
     searchUsers: queryVal => {
+        // debugger
         return $.ajax({
             url: '/users/search',
             method: 'get',
