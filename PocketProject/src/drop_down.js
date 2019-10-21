@@ -28,20 +28,27 @@ const dogLinkCreator = function(dogs) {
   return completedArr;
 };
 
-const attachDogLink = function(){
+const attachDogLinks = function(){
   const dogLinks = dogLinkCreator(dogs);
   const ul = document.querySelector('.drop-down-dog-list');
 
   dogLinks.forEach(link => ul.appendChild(link));
 }
 
-attachDogLink();
+attachDogLinks();
 
 
 const handleLeave = function() {
-  
-}
+  const dogList = document.querySelectorAll('.dog-link');
+  dogList.forEach(li => li.classList.remove('open'));
+};
 
 const handleEnter = function() {
+  const dogList = document.querySelectorAll('.dog-link');
+  dogList.forEach(li => li.classList.add('open'));
+};
 
-}
+const nav = document.querySelector('.drop-down-dog-nav');
+
+nav.addEventListener('mouseenter', handleEnter);
+nav.addEventListener('mouseleave', handleLeave);
