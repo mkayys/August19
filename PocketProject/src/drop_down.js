@@ -15,8 +15,10 @@ const dogLinkCreator = function(dogs) {
   for(let i=0; i < dogsArr.length; i++) {
     let aTag = document.createElement('a');
     aTag.innerHTML = dogsArr[i];
-    // aTag.href = dogs[i];
-    aTag.setAttribute('href', dogs[i]);
+    // debugger
+    aTag.href = dogs[dogsArr[i]];
+  
+    // aTag.setAttribute('href', dogs[i]);
     let liTag = document.createElement('li');
     liTag.classList.add('dog-link');
     liTag.appendChild(aTag);
@@ -27,6 +29,19 @@ const dogLinkCreator = function(dogs) {
 };
 
 const attachDogLink = function(){
+  const dogLinks = dogLinkCreator(dogs);
+  const ul = document.querySelector('.drop-down-dog-list');
 
+  dogLinks.forEach(link => ul.appendChild(link));
 }
 
+attachDogLink();
+
+
+const handleLeave = function() {
+  
+}
+
+const handleEnter = function() {
+
+}
