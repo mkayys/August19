@@ -1,9 +1,11 @@
 import React from 'react';
+import Clock from './frontend/clock';
 
-const Root = () => {
+const Root = (props) => {
     return (
         <div>
             <h1>React is working</h1>
+            <Clock />
         </div>
     )
 }
