@@ -30,8 +30,8 @@ class Clock extends React.Component {
     render() {
         return (
             <div className='clock-container'>
-                <h1>clock</h1>
-                <div>
+                <div className='clock-title'>Clock</div>
+                <div className='time'>
                     {this.timeString()}
                 </div>
             </div>

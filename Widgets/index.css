@@ -1,0 +1,22 @@
+#root {
+    background-image: url('https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/04113830/Australian-Shepherd.10440112.jpg');
+}
+
+.clock-container {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.clock-title {
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-size: 50px;
+    padding: 10px;
+    color: lavender;
+}
+
+.time {
+    font-size: 20px;
+    color: lavender;
+}
+
