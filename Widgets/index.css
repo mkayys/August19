@@ -2,6 +2,8 @@
     background-image: url('https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/04113830/Australian-Shepherd.10440112.jpg');
 }
 
+/* CLOCK */
+
 .clock-container {
     margin: 0 auto;
     text-align: center;
@@ -20,3 +22,29 @@
     color: lavender;
 }
 
+
+/* TABS */
+
+.tabs-container {
+    border: 1px solid black;
+    display: flex;
+    justify-content: stretch;
+    width: 50vw;
+}
+
+.tab-title:hover {
+    color: purple;
+    cursor: pointer;
+
+}
+
+.tab-title {
+    list-style: none;
+}
+
+.tab-content {
+    padding: 50px 0px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+}

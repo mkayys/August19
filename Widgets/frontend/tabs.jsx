@@ -7,23 +7,32 @@ class Tabs extends React.Component {
         this.state = {
             selectedIdx: 0
         }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(idx) {
+        return (e) => {
+            e.preventDefault();
+            this.setState({ selectedIdx: idx });
+        }
     }
 
     render() {
         // debugger
         const tabs = this.props.tabsArr.map((tab, idx) => {
             return (
-                <li key={idx}>
+                <li className="tab-title" onClick={this.handleClick(idx)} key={idx}>
                     <h1>{tab.title}</h1>
-                    <article>{tab.content}</article>
                 </li>
             )
         });
         return (
-            <div>
+            <div className="tabs-container">
                 <ul>
                     {tabs}
                 </ul>
+                <div className="tab-content">{this.props.tabsArr[this.state.selectedIdx].content}</div>
             </div>
         )
     }
