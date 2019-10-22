@@ -24,15 +24,19 @@ class Tabs extends React.Component {
             return (
                 <li className="tab-title" onClick={this.handleClick(idx)} key={idx}>
                     <h1>{tab.title}</h1>
+                    {/* <div>{tab.content}</div>  */}
                 </li>
             )
         });
+        // console.log(tabs)
         return (
             <div className="tabs-container">
                 <ul>
                     {tabs}
                 </ul>
-                <div className="tab-content">{this.props.tabsArr[this.state.selectedIdx].content}</div>
+                <div className="tab-content">
+                    {this.props.tabsArr[this.state.selectedIdx].content}
+                </div>
             </div>
         )
     }

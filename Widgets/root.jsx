@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from './frontend/clock';
 import Tabs from './frontend/tabs';
+import Weather from './frontend/weather';
 
 let tabsArr = [{ 
     title: 'hello',
@@ -21,6 +22,7 @@ const Root = (props) => {
             <h1>Widgets</h1>
             <Clock />
             <Tabs tabsArr={tabsArr} />
+            <Weather />
         </div>
     )
 }

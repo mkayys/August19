@@ -11,6 +11,7 @@
     background-color: black;
     border: 1px solid rosybrown;
     width: 100px;
+    border-radius: 35px;
 }
 
 .clock-title {
@@ -39,7 +40,6 @@
 .tab-title:hover {
     color: purple;
     cursor: pointer;
-
 }
 
 .tab-title {
@@ -51,4 +51,5 @@
     margin: 0 auto;
     font-size: 20px;
     font-family: 'Liu Jian Mao Cao', cursive;
+    color: royalblue;
 }
