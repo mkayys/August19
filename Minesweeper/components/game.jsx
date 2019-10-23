@@ -20,7 +20,7 @@ class Game extends React.Component {
     render() {
         return (
             <div>
-                <h1>hi</h1>
+                <h1>MINESWEEEPPPEEERR</h1>
                 <Board board={this.state.board} updateGame={this.updateGame} />
             </div>
         )
