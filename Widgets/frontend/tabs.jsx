@@ -12,22 +12,22 @@ class Tabs extends React.Component {
     }
 
     handleClick(idx) {
-        return (e) => {
-            e.preventDefault();
+        return () => {
+            // e.preventDefault();
             this.setState({ selectedIdx: idx });
         }
     }
 
     render() {
         // debugger
-        const tabs = this.props.tabsArr.map((tab, idx) => {
-            return (
+        const { tabsArr } = this.props;
+        const tabs = tabsArr.map((tab, idx) => (
                 <li className="tab-title" onClick={this.handleClick(idx)} key={idx}>
                     <h1>{tab.title}</h1>
                     {/* <div>{tab.content}</div>  */}
                 </li>
             )
-        });
+        );
         // console.log(tabs)
         return (
             <div className="tabs-container">
