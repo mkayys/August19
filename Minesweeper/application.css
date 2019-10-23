@@ -73,9 +73,36 @@
 .modal-bck {
     position: fixed;
     z-index: 20;
-    
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .modal-child {
+    border: 1px solid plum;
+    padding: 10px;
+    background: white;
+    margin: 200px auto;
+    width: 200px;
+    text-align: center;
+    border: 1px solid plum;
+    color: purple;
+}
 
+.redo {
+    margin-top: 5px;
+    border: 1px solid rgb(167, 63, 63);
+    border-radius: 10px;
+    padding: 10px;
+    /* font-size: 10px; */
+    color: gold;
+}
+
+.redo:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    /* width: 100px; */
 }

@@ -7,12 +7,23 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            board: new Minesweeper.Board(5, 5)
+            board: new Minesweeper.Board(5, 5),
+            cheating: false
         }
 
         this.updateGame = this.updateGame.bind(this);
+        this.restartGame = this.restartGame.bind(this);
     }
 
+    componentDidMount() {
+        window.addEventListener('keydown', () => {
+
+        })
+
+        window.addEventListener('keyup', () => {
+            
+        })
+    }
     updateGame(tile, flagging) {
         if (flagging) {
             tile.toggleFlag();
@@ -22,8 +33,10 @@ class Game extends React.Component {
         this.setState({ board: this.state.board })
     }
 
-    restartGame() {
-
+    restartGame(e) {
+        // console.log(this)
+        const newBoard = new Minesweeper.Board(5,5);
+        this.setState({ board: newBoard });
     }
 
     render() {
@@ -36,8 +49,11 @@ class Game extends React.Component {
             modal = 
                 <div className="modal-bck">
                     <div className="modal-child">
-                        {/* {lost}{win} */}
                         {status}
+                        <br />
+                        {lost}{win}
+                        <br />
+                        <button className="redo" onClick={this.restartGame}>Play again</button>
                     </div>
                 </div>
         }
