@@ -12,7 +12,7 @@ class Board extends React.Component {
             <div className="board-container">
                 {this.props.board.grid.map((row, i) => {
                     return (
-                        <div key={i}>
+                        <div className="row" key={i}>
                             {row.map((tile, j) => {
                                 return (
                                     <Tile key={j} tile={tile} updateGame={this.props.updateGame} />
