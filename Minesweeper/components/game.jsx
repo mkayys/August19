@@ -8,12 +8,18 @@ class Game extends React.Component {
         this.state = {
             board: new Minesweeper.Board(5, 5)
         }
+
+        this.updateGame = this.updateGame.bind(this);
+    }
+
+    updateGame() {
+
     }
 
     render() {
         return (
             <div>
-
+                <Board board={this.state.board} updateGame={this.updateGame} />
             </div>
         )
     }
