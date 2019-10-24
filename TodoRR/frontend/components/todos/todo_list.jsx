@@ -18,12 +18,14 @@ class TodoList extends React.Component {
             )
         })
         return (
-            <div>
-                <div>Todo List</div>
-                <ul>
-                    {todos}
-                </ul>
-                <div><TodoForm receiveTodo={this.props.receiveTodo}/></div>
+            <div className='todos-and-form'>
+                <div className="todo-list">You can do it! 💫
+                    <ul>
+                        {todos}
+                    </ul>
+                </div>
+                
+                <TodoForm receiveTodo={this.props.receiveTodo}/>
             </div>
         )
     }

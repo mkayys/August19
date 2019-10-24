@@ -38,22 +38,26 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <div>Create a TODO
-                <br />
+            <div className="todo-form">
                 <form onSubmit={this.handleSubmit}>
-                    <label>Title: &nbsp;
-                        <input type="text"
-                        value={this.state.title}
-                        onChange={this.updateTitle}/>
-                    </label>
-                    <br />
-                    <label>Body: &nbsp;
-                        <input type="text"
-                        value={this.state.body}
-                        onChange={this.updateBody}/>
-                    </label>
-                    <br />
-                    <input type="submit" value="let's get life together!"/>
+                    <fieldset>
+                        <legend>Create a To Do Item:</legend>
+                        Title: &nbsp;
+                        <br />
+                            <input type="text"
+                            value={this.state.title}
+                            onChange={this.updateTitle}/>
+                        
+                        <br />
+                        Body: &nbsp;
+                        <br />
+                            <input type="text"
+                            value={this.state.body}
+                            onChange={this.updateBody}/>
+                        
+                        <br />
+                        <input type="submit" value="let's get life together!"/>
+                    </fieldset>
                 </form>
             </div>
         )

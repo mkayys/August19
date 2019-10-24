@@ -26,11 +26,11 @@ class TodoListItem extends React.Component {
 
     render() {
         return (
-            <li>
+            <div className="todo-item">
                 {this.props.todo.title}
                 <button onClick={this.deleteTodo(this.props.todo)}>BE GONE!</button>
                 <input type="checkbox" onClick={this.updateStatus} />
-            </li>
+            </div>
         )
     }
 };
