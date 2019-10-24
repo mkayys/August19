@@ -12,14 +12,18 @@ class Tile extends React.Component {
         // console.log(e);
         // debugger
         const flagging = e.altKey ? true : false
-        console.log(flagging);
+        // console.log(flagging);
         this.props.updateGame(this.props.tile, flagging);
     }
 
     render() {
-        const { tile } = this.props;
+        const { tile, cheating } = this.props;
         let klass = "none";
         let text;
+        if(cheating && tile.bombed) {
+            text = "💣";
+            klass = "bombed";
+        }
         if (tile.explored) {
             if (tile.bombed) {
                 text = "💣";

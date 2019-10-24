@@ -15,7 +15,7 @@ class Board extends React.Component {
                         <div className="row" key={i}>
                             {row.map((tile, j) => {
                                 return (
-                                    <Tile key={j} tile={tile} updateGame={this.props.updateGame} />
+                                    <Tile key={j} tile={tile} updateGame={this.props.updateGame} cheating={this.props.cheating} />
                                 )
                             })}
                         </div>

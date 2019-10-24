@@ -16,12 +16,16 @@ class Game extends React.Component {
     }
 
     componentDidMount() {
-        window.addEventListener('keydown', () => {
-
+        let that = this;
+        window.addEventListener('keydown', (e) => {
+            // console.log(e);
+            if(e.key === 'Meta') {
+                that.setState({ cheating: true })
+            }
         })
 
         window.addEventListener('keyup', () => {
-            
+            that.setState({ cheating: false })
         })
     }
     updateGame(tile, flagging) {
@@ -61,7 +65,7 @@ class Game extends React.Component {
             <div>
                 <h1>MINESWEEEPPPEEERR</h1>
                 {modal}
-                <Board board={this.state.board} updateGame={this.updateGame} />
+                <Board board={this.state.board} updateGame={this.updateGame} cheating={this.state.cheating}/>
             </div>
         )
     }
