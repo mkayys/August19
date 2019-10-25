@@ -236,3 +236,36 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-10-25 10:42:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 198ms (Views: 197.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 10:42:02 -0700
+Processing by Api::TodosController#index as JSON
+No template found for Api::TodosController#index, rendering head :no_content
+Completed 204 No Content in 134ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 10:48:26 -0700
+Processing by Api::TodosController#index as JSON
+No template found for Api::TodosController#index, rendering head :no_content
+Completed 204 No Content in 129ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 10:54:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 10:54:35 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 34ms (Views: 13.9ms | ActiveRecord: 13.0ms)
+
+
