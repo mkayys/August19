@@ -1,11 +1,12 @@
 const path = require('path');
+
 module.exports = {
-    context: __dirname,
-    entry: "./todo_redux.jsx",
+    entry: "./frontend/todo_redux.jsx",
     output: {
-        path: path.resolve(__dirname),
-        filename: "bundle.js"
+        path: path.resolve(__dirname, "app", "assets", "javascripts"),
+        filename: "./bundle.js"
     },
+    devtool: "inline-source-map",
     module: {
         rules: [
             {
@@ -16,12 +17,11 @@ module.exports = {
                     query: {
                         presets: ['@babel/env', '@babel/react']
                     }
-                },
+                }
             }
         ]
     },
-    devtool: 'inline-source-map',
     resolve: {
-        extensions: [".js", ".jsx", "*"]
+        extensions: ['.js', '.jsx', '*']
     }
 };
