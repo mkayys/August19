@@ -16,5 +16,5 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 //= require jquery
-//= require jquery_ujs
-//= require_tree
+//= require rails-ujs
+//= require_tree .
