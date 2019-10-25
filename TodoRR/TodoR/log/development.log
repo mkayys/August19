@@ -420,3 +420,24 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 515ms (Views: 515.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-10-25 12:31:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Started GET "/" for ::1 at 2019-10-25 12:31:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1092ms (Views: 1089.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1095ms (Views: 1094.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 12:35:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 906ms (Views: 905.5ms | ActiveRecord: 0.0ms)
+
+
